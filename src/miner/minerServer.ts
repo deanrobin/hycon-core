@@ -78,6 +78,7 @@ export class MinerServer {
         const miner: Address = new Address(userOptions.minerAddress)
         const target = Consensus.getTarget(difficulty, height)
         logger.info(`Going to mining block height: ${height}`)
+        logger.info(`New Candidate Block Difficulty: 0x${previousDBBlock.nextDifficulty.toExponential()} Target: ${target.toString("hex")}`)
         clearInterval(this.intervalId)
 
         const previousHashes = [previousHash]
